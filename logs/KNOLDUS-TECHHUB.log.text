@@ -1,0 +1,20 @@
+[KNOLDUS-TECHHUB] org.testcontainers.dockerclient.DockerClientProviderStrategy [2021-10-18 15:49:25,672] [INFO] - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+[KNOLDUS-TECHHUB] org.testcontainers.dockerclient.DockerClientProviderStrategy [2021-10-18 15:49:26,375] [INFO] - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:26,376] [INFO] - Docker host IP address is localhost
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:26,405] [INFO] - Connected to docker: 
+  Server Version: 20.10.9
+  API Version: 1.41
+  Operating System: Ubuntu 20.04.3 LTS
+  Total Memory: 15771 MB
+[KNOLDUS-TECHHUB] org.testcontainers.utility.ImageNameSubstitutor [2021-10-18 15:49:26,409] [INFO] - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[KNOLDUS-TECHHUB] org.testcontainers.utility.RegistryAuthLocator [2021-10-18 15:49:26,462] [INFO] - Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.3.1, configFile: /home/knoldus/.docker/config.json. Falling back to docker-java default behaviour. Exception message: /home/knoldus/.docker/config.json (No such file or directory)
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:27,192] [INFO] - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:27,192] [INFO] - Checking the system...
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:27,193] [INFO] - ✔︎ Docker server version should be at least 1.6.0
+[KNOLDUS-TECHHUB] org.testcontainers.DockerClientFactory [2021-10-18 15:49:27,339] [INFO] - ✔︎ Docker environment should have more than 2GB free disk space
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:27,369] [INFO] - Creating container for image: mysql:latest
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:27,556] [INFO] - Starting container with ID: 837f78006d9cff768f6e77a0a7d6b9e9b3bdbe781f15d2d37ad43a2e3175aeda
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:27,872] [INFO] - Container mysql:latest is starting: 837f78006d9cff768f6e77a0a7d6b9e9b3bdbe781f15d2d37ad43a2e3175aeda
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:27,879] [INFO] - Waiting for database connection to become available at jdbc:mysql://localhost:49155/sample using query 'SELECT 1'
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:41,269] [INFO] - Container is started (JDBC URL: jdbc:mysql://localhost:49155/sample)
+[KNOLDUS-TECHHUB] 🐳 [mysql:latest] [2021-10-18 15:49:41,269] [INFO] - Container mysql:latest started in PT13.924S

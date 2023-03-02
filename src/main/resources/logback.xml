@@ -1,0 +1,51 @@
+<configuration>
+
+    <property scope="context" name="app.name" value="KNOLDUS-TECHHUB" />
+    <property scope="local" name="default.text.encoder.pattern" value="[${app.name}] %logger{100} [%date{ISO8601}] [%level] - %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${default.text.encoder.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CONSOLE-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STDOUT"/>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/${app.name}.log.text</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/${app.name}-%d{${text.appender.datePattern:-yyyy-MM-dd}}.%i.log.text</fileNamePattern>
+            <maxFileSize>${text.appender.maxFileSize:-10MB}</maxFileSize>
+            <maxHistory>${text.appender.maxHistory:-10}</maxHistory>
+            <totalSizeCap>${text.appender.totalSize:-200MB}</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>${default.text.encoder.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>500</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <appender-ref ref="FILE" />
+    </appender>
+
+    <logger name="com.zaxxer.hikari" level="ERROR"/>
+    <logger name="slick.relational" level="ERROR"/>
+    <logger name="akka.http.impl.engine.client.PoolGateway" level="ERROR"/>
+    <logger name="akka.io.TcpOutgoingConnection" level="ERROR"/>
+    <logger name="com.zaxxer.hikari.HikariDataSource" level="ERROR"/>
+    <logger name="akka.event.slf4j.Slf4jLogger" level="ERROR"/>
+    <logger name="akka.event.EventStream" level="ERROR"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE-APPENDER"/>
+        <appender-ref ref="FILE-APPENDER"/>
+    </root>
+
+</configuration>
